@@ -101,7 +101,7 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GCMSharp\GCMSharp.Client\GCMSharp.Client.csproj">
+    <ProjectReference Include="..\external\GCMSharp\GCMSharp.Client\GCMSharp.Client.csproj">
       <Project>{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}</Project>
       <Name>GCMSharp.Client</Name>
     </ProjectReference>

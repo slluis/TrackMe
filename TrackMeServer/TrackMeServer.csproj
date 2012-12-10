@@ -80,11 +80,11 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\PushSharp\PushSharp.Android\PushSharp.Google.csproj">
+    <ProjectReference Include="..\external\PushSharp\PushSharp.Android\PushSharp.Google.csproj">
       <Project>{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}</Project>
       <Name>PushSharp.Google</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PushSharp\PushSharp.Common\PushSharp.Common.csproj">
+    <ProjectReference Include="..\external\PushSharp\PushSharp.Common\PushSharp.Common.csproj">
       <Project>{836F225F-6CD9-48DE-910C-70F8A7CF54AA}</Project>
       <Name>PushSharp.Common</Name>
     </ProjectReference>

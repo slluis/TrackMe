@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMe", "TrackMe\TrackMe.csproj", "{137D2EA1-7B44-49A0-98F2-EB9858697422}"
@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMeServer", "TrackMeSer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PushSharp", "PushSharp", "{EA96C381-BC6B-4238-921B-C28BDA58017E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Common", "PushSharp\PushSharp.Common\PushSharp.Common.csproj", "{836F225F-6CD9-48DE-910C-70F8A7CF54AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Common", "external\PushSharp\PushSharp.Common\PushSharp.Common.csproj", "{836F225F-6CD9-48DE-910C-70F8A7CF54AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Google", "PushSharp\PushSharp.Android\PushSharp.Google.csproj", "{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Google", "external\PushSharp\PushSharp.Android\PushSharp.Google.csproj", "{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCMSharp.Client", "GCMSharp\GCMSharp.Client\GCMSharp.Client.csproj", "{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCMSharp.Client", "external\GCMSharp\GCMSharp.Client\GCMSharp.Client.csproj", "{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
