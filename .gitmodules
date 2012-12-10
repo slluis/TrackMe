@@ -1,0 +1,6 @@
+[submodule "external/GCMSharp"]
+	path = external/GCMSharp
+	url = git://github.com/Redth/GCMSharp.git
+[submodule "external/PushSharp"]
+	path = external/PushSharp
+	url = git://github.com/Redth/PushSharp.git

@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" name="LocationService" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GetActiveShares">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfLocationShare">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationShare" nillable="true" type="s0:LocationShare" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LocationShare">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrivateId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PublicId" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:float" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:float" />
+          <xs:element minOccurs="0" maxOccurs="1" name="User" type="s0:UserInfo" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ShareSettings" type="s0:ShareSettings" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SharedTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ExpireTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Trackers" type="s0:ArrayOfUserInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrivateId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RegistrationId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Icon" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ShareSettings">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="TimeoutMinutes" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="CancelOnArrival" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfUserInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="s0:UserInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetActiveSharesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetActiveSharesResult" type="s0:ArrayOfLocationShare" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateLocationShare">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="user" type="s0:UserInfo" />
+            <xs:element minOccurs="0" maxOccurs="1" name="settings" type="s0:ShareSettings" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateLocationShareResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CreateLocationShareResult" type="s0:LocationShare" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPublicShareInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="shareId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="PublicLocationShare">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:float" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:float" />
+          <xs:element minOccurs="0" maxOccurs="1" name="User" type="s0:UserInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetPublicShareInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetPublicShareInfoResult" type="s0:PublicLocationShare" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTrackedShares">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="userId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfTrackedShare">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackedShare" nillable="true" type="s0:TrackedShare" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrackedShare">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TrackerId" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:float" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:float" />
+          <xs:element minOccurs="0" maxOccurs="1" name="User" type="s0:UserInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetTrackedSharesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetTrackedSharesResult" type="s0:ArrayOfTrackedShare" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterTracker">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="publicShareId" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="trackerInfo" type="s0:UserInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegisterTrackerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RegisterTrackerResult" type="s0:TrackedShare" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTrackerInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="privateShareId" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="trackerId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTrackerInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetTrackerInfoResult" type="s0:UserInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetTrackerStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="privateShareId" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="trackerId" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="allowTracking" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SetTrackerStatusResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="UpdateTargetPosition">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="privateShareId" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="longitude" type="xs:float" />
+            <xs:element minOccurs="1" maxOccurs="1" name="latitude" type="xs:float" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateTargetPositionResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="ArrayOfLocationShare" nillable="true" type="s0:ArrayOfLocationShare" />
+      <xs:element name="PublicLocationShare" nillable="true" type="s0:PublicLocationShare" />
+      <xs:element name="ArrayOfTrackedShare" nillable="true" type="s0:ArrayOfTrackedShare" />
+      <xs:element name="UserInfo" nillable="true" type="s0:UserInfo" />
+    </xs:schema>
+  </types>
+  <message name="GetActiveSharesSoapIn">
+    <part name="parameters" element="s0:GetActiveShares" />
+  </message>
+  <message name="GetActiveSharesSoapOut">
+    <part name="parameters" element="s0:GetActiveSharesResponse" />
+  </message>
+  <message name="CreateLocationShareSoapIn">
+    <part name="parameters" element="s0:CreateLocationShare" />
+  </message>
+  <message name="CreateLocationShareSoapOut">
+    <part name="parameters" element="s0:CreateLocationShareResponse" />
+  </message>
+  <message name="GetPublicShareInfoSoapIn">
+    <part name="parameters" element="s0:GetPublicShareInfo" />
+  </message>
+  <message name="GetPublicShareInfoSoapOut">
+    <part name="parameters" element="s0:GetPublicShareInfoResponse" />
+  </message>
+  <message name="GetTrackedSharesSoapIn">
+    <part name="parameters" element="s0:GetTrackedShares" />
+  </message>
+  <message name="GetTrackedSharesSoapOut">
+    <part name="parameters" element="s0:GetTrackedSharesResponse" />
+  </message>
+  <message name="RegisterTrackerSoapIn">
+    <part name="parameters" element="s0:RegisterTracker" />
+  </message>
+  <message name="RegisterTrackerSoapOut">
+    <part name="parameters" element="s0:RegisterTrackerResponse" />
+  </message>
+  <message name="GetTrackerInfoSoapIn">
+    <part name="parameters" element="s0:GetTrackerInfo" />
+  </message>
+  <message name="GetTrackerInfoSoapOut">
+    <part name="parameters" element="s0:GetTrackerInfoResponse" />
+  </message>
+  <message name="SetTrackerStatusSoapIn">
+    <part name="parameters" element="s0:SetTrackerStatus" />
+  </message>
+  <message name="SetTrackerStatusSoapOut">
+    <part name="parameters" element="s0:SetTrackerStatusResponse" />
+  </message>
+  <message name="UpdateTargetPositionSoapIn">
+    <part name="parameters" element="s0:UpdateTargetPosition" />
+  </message>
+  <message name="UpdateTargetPositionSoapOut">
+    <part name="parameters" element="s0:UpdateTargetPositionResponse" />
+  </message>
+  <message name="GetActiveSharesHttpGetIn">
+    <part name="userId" type="s:string" />
+  </message>
+  <message name="GetActiveSharesHttpGetOut">
+    <part name="Body" element="s0:ArrayOfLocationShare" />
+  </message>
+  <message name="GetPublicShareInfoHttpGetIn">
+    <part name="shareId" type="s:string" />
+  </message>
+  <message name="GetPublicShareInfoHttpGetOut">
+    <part name="Body" element="s0:PublicLocationShare" />
+  </message>
+  <message name="GetTrackedSharesHttpGetIn">
+    <part name="userId" type="s:string" />
+  </message>
+  <message name="GetTrackedSharesHttpGetOut">
+    <part name="Body" element="s0:ArrayOfTrackedShare" />
+  </message>
+  <message name="GetTrackerInfoHttpGetIn">
+    <part name="privateShareId" type="s:string" />
+    <part name="trackerId" type="s:string" />
+  </message>
+  <message name="GetTrackerInfoHttpGetOut">
+    <part name="Body" element="s0:UserInfo" />
+  </message>
+  <message name="SetTrackerStatusHttpGetIn">
+    <part name="privateShareId" type="s:string" />
+    <part name="trackerId" type="s:string" />
+    <part name="allowTracking" type="s:boolean" />
+  </message>
+  <message name="SetTrackerStatusHttpGetOut" />
+  <message name="UpdateTargetPositionHttpGetIn">
+    <part name="privateShareId" type="s:string" />
+    <part name="longitude" type="s:float" />
+    <part name="latitude" type="s:float" />
+  </message>
+  <message name="UpdateTargetPositionHttpGetOut" />
+  <message name="GetActiveSharesHttpPostIn">
+    <part name="userId" type="s:string" />
+  </message>
+  <message name="GetActiveSharesHttpPostOut">
+    <part name="Body" element="s0:ArrayOfLocationShare" />
+  </message>
+  <message name="GetPublicShareInfoHttpPostIn">
+    <part name="shareId" type="s:string" />
+  </message>
+  <message name="GetPublicShareInfoHttpPostOut">
+    <part name="Body" element="s0:PublicLocationShare" />
+  </message>
+  <message name="GetTrackedSharesHttpPostIn">
+    <part name="userId" type="s:string" />
+  </message>
+  <message name="GetTrackedSharesHttpPostOut">
+    <part name="Body" element="s0:ArrayOfTrackedShare" />
+  </message>
+  <message name="GetTrackerInfoHttpPostIn">
+    <part name="privateShareId" type="s:string" />
+    <part name="trackerId" type="s:string" />
+  </message>
+  <message name="GetTrackerInfoHttpPostOut">
+    <part name="Body" element="s0:UserInfo" />
+  </message>
+  <message name="SetTrackerStatusHttpPostIn">
+    <part name="privateShareId" type="s:string" />
+    <part name="trackerId" type="s:string" />
+    <part name="allowTracking" type="s:boolean" />
+  </message>
+  <message name="SetTrackerStatusHttpPostOut" />
+  <message name="UpdateTargetPositionHttpPostIn">
+    <part name="privateShareId" type="s:string" />
+    <part name="longitude" type="s:float" />
+    <part name="latitude" type="s:float" />
+  </message>
+  <message name="UpdateTargetPositionHttpPostOut" />
+  <portType name="LocationServiceSoap">
+    <operation name="GetActiveShares">
+      <input message="s0:GetActiveSharesSoapIn" />
+      <output message="s0:GetActiveSharesSoapOut" />
+    </operation>
+    <operation name="CreateLocationShare">
+      <input message="s0:CreateLocationShareSoapIn" />
+      <output message="s0:CreateLocationShareSoapOut" />
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <input message="s0:GetPublicShareInfoSoapIn" />
+      <output message="s0:GetPublicShareInfoSoapOut" />
+    </operation>
+    <operation name="GetTrackedShares">
+      <input message="s0:GetTrackedSharesSoapIn" />
+      <output message="s0:GetTrackedSharesSoapOut" />
+    </operation>
+    <operation name="RegisterTracker">
+      <input message="s0:RegisterTrackerSoapIn" />
+      <output message="s0:RegisterTrackerSoapOut" />
+    </operation>
+    <operation name="GetTrackerInfo">
+      <input message="s0:GetTrackerInfoSoapIn" />
+      <output message="s0:GetTrackerInfoSoapOut" />
+    </operation>
+    <operation name="SetTrackerStatus">
+      <input message="s0:SetTrackerStatusSoapIn" />
+      <output message="s0:SetTrackerStatusSoapOut" />
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <input message="s0:UpdateTargetPositionSoapIn" />
+      <output message="s0:UpdateTargetPositionSoapOut" />
+    </operation>
+  </portType>
+  <portType name="LocationServiceSoap12">
+    <operation name="GetActiveShares">
+      <input message="s0:GetActiveSharesSoapIn" />
+      <output message="s0:GetActiveSharesSoapOut" />
+    </operation>
+    <operation name="CreateLocationShare">
+      <input message="s0:CreateLocationShareSoapIn" />
+      <output message="s0:CreateLocationShareSoapOut" />
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <input message="s0:GetPublicShareInfoSoapIn" />
+      <output message="s0:GetPublicShareInfoSoapOut" />
+    </operation>
+    <operation name="GetTrackedShares">
+      <input message="s0:GetTrackedSharesSoapIn" />
+      <output message="s0:GetTrackedSharesSoapOut" />
+    </operation>
+    <operation name="RegisterTracker">
+      <input message="s0:RegisterTrackerSoapIn" />
+      <output message="s0:RegisterTrackerSoapOut" />
+    </operation>
+    <operation name="GetTrackerInfo">
+      <input message="s0:GetTrackerInfoSoapIn" />
+      <output message="s0:GetTrackerInfoSoapOut" />
+    </operation>
+    <operation name="SetTrackerStatus">
+      <input message="s0:SetTrackerStatusSoapIn" />
+      <output message="s0:SetTrackerStatusSoapOut" />
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <input message="s0:UpdateTargetPositionSoapIn" />
+      <output message="s0:UpdateTargetPositionSoapOut" />
+    </operation>
+  </portType>
+  <portType name="LocationServiceHttpGet">
+    <operation name="GetActiveShares">
+      <input message="s0:GetActiveSharesHttpGetIn" />
+      <output message="s0:GetActiveSharesHttpGetOut" />
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <input message="s0:GetPublicShareInfoHttpGetIn" />
+      <output message="s0:GetPublicShareInfoHttpGetOut" />
+    </operation>
+    <operation name="GetTrackedShares">
+      <input message="s0:GetTrackedSharesHttpGetIn" />
+      <output message="s0:GetTrackedSharesHttpGetOut" />
+    </operation>
+    <operation name="GetTrackerInfo">
+      <input message="s0:GetTrackerInfoHttpGetIn" />
+      <output message="s0:GetTrackerInfoHttpGetOut" />
+    </operation>
+    <operation name="SetTrackerStatus">
+      <input message="s0:SetTrackerStatusHttpGetIn" />
+      <output message="s0:SetTrackerStatusHttpGetOut" />
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <input message="s0:UpdateTargetPositionHttpGetIn" />
+      <output message="s0:UpdateTargetPositionHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="LocationServiceHttpPost">
+    <operation name="GetActiveShares">
+      <input message="s0:GetActiveSharesHttpPostIn" />
+      <output message="s0:GetActiveSharesHttpPostOut" />
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <input message="s0:GetPublicShareInfoHttpPostIn" />
+      <output message="s0:GetPublicShareInfoHttpPostOut" />
+    </operation>
+    <operation name="GetTrackedShares">
+      <input message="s0:GetTrackedSharesHttpPostIn" />
+      <output message="s0:GetTrackedSharesHttpPostOut" />
+    </operation>
+    <operation name="GetTrackerInfo">
+      <input message="s0:GetTrackerInfoHttpPostIn" />
+      <output message="s0:GetTrackerInfoHttpPostOut" />
+    </operation>
+    <operation name="SetTrackerStatus">
+      <input message="s0:SetTrackerStatusHttpPostIn" />
+      <output message="s0:SetTrackerStatusHttpPostOut" />
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <input message="s0:UpdateTargetPositionHttpPostIn" />
+      <output message="s0:UpdateTargetPositionHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="LocationServiceSoap" type="s0:LocationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetActiveShares">
+      <soap:operation soapAction="http://tempuri.org/GetActiveShares" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CreateLocationShare">
+      <soap:operation soapAction="http://tempuri.org/CreateLocationShare" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPublicShareInfo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTrackedShares">
+      <soap:operation soapAction="http://tempuri.org/GetTrackedShares" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterTracker">
+      <soap:operation soapAction="http://tempuri.org/RegisterTracker" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTrackerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTrackerInfo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetTrackerStatus">
+      <soap:operation soapAction="http://tempuri.org/SetTrackerStatus" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <soap:operation soapAction="http://tempuri.org/UpdateTargetPosition" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="LocationServiceSoap12" type="s0:LocationServiceSoap12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetActiveShares">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveShares" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CreateLocationShare">
+      <soap12:operation soapAction="http://tempuri.org/CreateLocationShare" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetPublicShareInfo" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTrackedShares">
+      <soap12:operation soapAction="http://tempuri.org/GetTrackedShares" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RegisterTracker">
+      <soap12:operation soapAction="http://tempuri.org/RegisterTracker" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTrackerInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTrackerInfo" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetTrackerStatus">
+      <soap12:operation soapAction="http://tempuri.org/SetTrackerStatus" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTargetPosition" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="LocationServiceHttpGet" type="s0:LocationServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="GetActiveShares">
+      <http:operation location="/GetActiveShares" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <http:operation location="/GetPublicShareInfo" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetTrackedShares">
+      <http:operation location="/GetTrackedShares" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetTrackerInfo">
+      <http:operation location="/GetTrackerInfo" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="SetTrackerStatus">
+      <http:operation location="/SetTrackerStatus" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <http:operation location="/UpdateTargetPosition" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+  </binding>
+  <binding name="LocationServiceHttpPost" type="s0:LocationServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="GetActiveShares">
+      <http:operation location="/GetActiveShares" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetPublicShareInfo">
+      <http:operation location="/GetPublicShareInfo" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetTrackedShares">
+      <http:operation location="/GetTrackedShares" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetTrackerInfo">
+      <http:operation location="/GetTrackerInfo" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="SetTrackerStatus">
+      <http:operation location="/SetTrackerStatus" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+    <operation name="UpdateTargetPosition">
+      <http:operation location="/UpdateTargetPosition" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+  </binding>
+  <service name="LocationService">
+    <port name="LocationServiceSoap" binding="s0:LocationServiceSoap">
+      <soap:address location="http://127.0.0.1:8080/LocationService.asmx" />
+    </port>
+    <port name="LocationServiceSoap12" binding="s0:LocationServiceSoap12">
+      <soap12:address location="http://127.0.0.1:8080/LocationService.asmx" />
+    </port>
+    <port name="LocationServiceHttpGet" binding="s0:LocationServiceHttpGet">
+      <http:address location="http://127.0.0.1:8080/LocationService.asmx" />
+    </port>
+    <port name="LocationServiceHttpPost" binding="s0:LocationServiceHttpPost">
+      <http:address location="http://127.0.0.1:8080/LocationService.asmx" />
+    </port>
+  </service>
+</definitions>

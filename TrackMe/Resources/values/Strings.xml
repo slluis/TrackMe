@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">TrackMe</string>
+	<string name="appTitle">Track Me</string>
+	<string name="shareSubject">Track my location</string>
+	<string name="shareVia">Share via</string>
+	<string name="doYouWantToTrackThePositionOfTheFollowingUser">Do you want to track the position of this user?</string>
+	<string name="startTracking">Start Tracking</string>
+	<string name="cancel">Cancel</string>
+	<string name="gettingTrackInformation">Getting information</string>
+	<string name="invalidReference">The track reference is invalid. It may already have been expired</string>
+	<string name="startedTracking">New track target added</string>
+	<string name="shareYourLocation">Share your location</string>
+	<string name="shareMessage">You can control when your location share will expire</string>
+	<string-array name="expiration_time_array">
+		<item>10 minutes</item>
+		<item>30 minutes</item>
+		<item>45 minutes</item>
+		<item>1 hour</item>
+		<item>2 hours</item>
+		<item>3 hours</item>
+		<item>6 hours</item>
+		<item>12 hours</item>
+		<item>1 day</item>
+		<item>2 days</item>
+		<item>Select Date</item>
+		<item>Unlimited Time</item>
+	</string-array>
+	<string name="selectDate">Select Date ({0})</string>
+	<string name="expirationTime">Expiration time</string>
+	<string name="expireOnArrival">Expire when meeting with all trackers</string>
+	<string name="shareLocation">Share Location</string>
+	<string name="expirationDateError">Expiration date must be later than today</string>
+	<string name="sharingLocation">Sharing Location</string>
+	<string name="shareFailed">Location sharing failed</string>
+	<string name="trackerNotification">{0} is now tracking your location</string>
+	<string name="touchToOpen">Touch to open TrackMe</string>
+</resources>

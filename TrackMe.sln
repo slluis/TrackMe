@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMe", "TrackMe\TrackMe.csproj", "{137D2EA1-7B44-49A0-98F2-EB9858697422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMeServer", "TrackMeServer\TrackMeServer.csproj", "{5EF7D3A9-936C-4183-82D5-FDB75BE26C21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PushSharp", "PushSharp", "{EA96C381-BC6B-4238-921B-C28BDA58017E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Common", "PushSharp\PushSharp.Common\PushSharp.Common.csproj", "{836F225F-6CD9-48DE-910C-70F8A7CF54AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushSharp.Google", "PushSharp\PushSharp.Android\PushSharp.Google.csproj", "{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCMSharp.Client", "GCMSharp\GCMSharp.Client\GCMSharp.Client.csproj", "{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{137D2EA1-7B44-49A0-98F2-EB9858697422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137D2EA1-7B44-49A0-98F2-EB9858697422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137D2EA1-7B44-49A0-98F2-EB9858697422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137D2EA1-7B44-49A0-98F2-EB9858697422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF7D3A9-936C-4183-82D5-FDB75BE26C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF7D3A9-936C-4183-82D5-FDB75BE26C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF7D3A9-936C-4183-82D5-FDB75BE26C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF7D3A9-936C-4183-82D5-FDB75BE26C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{836F225F-6CD9-48DE-910C-70F8A7CF54AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{836F225F-6CD9-48DE-910C-70F8A7CF54AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{836F225F-6CD9-48DE-910C-70F8A7CF54AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{836F225F-6CD9-48DE-910C-70F8A7CF54AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA5D611-A26D-4EAF-A081-54E2457A2DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{836F225F-6CD9-48DE-910C-70F8A7CF54AA} = {EA96C381-BC6B-4238-921B-C28BDA58017E}
+		{71E27C37-FBBF-481B-934B-1F7DBDE3C5D6} = {EA96C381-BC6B-4238-921B-C28BDA58017E}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TrackMe\TrackMe.csproj
+	EndGlobalSection
+EndGlobal
